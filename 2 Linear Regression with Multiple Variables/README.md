@@ -4,7 +4,7 @@
 
 1. **Multiple Features/Variables**
 
-![w2.1]()
+![w2.1](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.1.PNG?raw=true)
 
 Q: In the training set above, what is X<sub>1</sub> <sup>(4)</sup>? 
 
@@ -34,21 +34,21 @@ h<sub>&theta;</sub>(x) = &theta;<sup>T</sup>X
 where
 
 ```
-X = 	[x0]		&theta= 	[&theta0]
-	[x1]				[&theta1]
-	[x2]				[&theta2]
-	[x3]				[&theta3]
+X = 	[x0]		θ = 		[θ0]
+	[x1]				[θ1]
+	[x2]				[θ2]
+	[x3]				[θ3]
 	[.]				  .
 	[.]				  .
 	[.]				  .
-	[xn]				[&thetan]
+	[xn]				[θn]
 ```
 
 2. **Gradient Descent for Multiple Variables**
 
 Cost function:
 
-J(0) = ![w2.2]()
+![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
 
 Gradient Descent:
 
@@ -56,10 +56,10 @@ Repeat {
 	&theta;<sub>j</sub> := &theta;<sub>j</sub> - &alpha; * ∂J(&theta;)/∂&theta;<sub>j</sub>
 } for every j = 0,1,..., n
 
-![w2.3]()
+![w2.3](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.3.PNG?raw=true)
 
 To elaborate on that: 
-![w2.4]()
+![w2.4](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.4.PNG?raw=true)
 
 3. **Gradient Descent -- Feature Scaling & Mean Normalization**
 
@@ -81,7 +81,7 @@ Two techniques to help with this are feature scaling and mean normalization. Fea
 
 Idea: make sure features are on a similar scale
 
-![w2.5]()
+![w2.5](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.5.PNG?raw=true)
 
 By implementing feature scaling, gradient descent can converge more faster.
 
@@ -105,7 +105,7 @@ Making sure gradient descent is working correctly: J(&theta;)should decrease aft
 
 **A. Debugging gradient descent**. Make a plot with number of iterations on the x-axis. Now plot the cost function, J(θ) over the number of iterations of gradient descent. If J(θ) ever increases, then you probably need to decrease α.
 
-![w2.6]()
+![w2.6](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.6.PNG?raw=true)
 
 It has been proven that if learning rate α is sufficiently small, J(θ) should decrease on every iteration.
 
@@ -116,7 +116,7 @@ It has been proven that if learning rate α is sufficiently small, J(θ) should 
 
 Q: Suppose a friend ran gradient descent three times, with α=0.01, α=0.1, and α=1, and got the following three plots (labeled A, B, and C):
 
-![w2.7]()
+![w2.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.7.PNG?raw=true)
 
 Which plots corresponds to which values of α?
 
@@ -154,7 +154,7 @@ If x<sub>1</sub> has range 1-1000 then x<sub>1</sub><sup>2</sup> becomes 1-10000
 
 Normal Equation: Method to solve for θ analytically.
 
-Cost function: J(θ) = ![w2.2]()
+Cost function: ![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
 
 Let ∂J(θ)/∂θ<sub>j</sub> = 0 for every j;
 
@@ -1092,7 +1092,7 @@ J =
 
 **Vectorize Cost Function**
 
-![w2.8]()
+![w2.8](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.8.PNG?raw=true)
 
 Unvectorized implementation
 
@@ -1128,9 +1128,11 @@ double prediction = theta.transpose() * x;
 
 **Vectorize Gradient Descent**
 
-![w2.9]()
+![w2.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.9.PNG?raw=true)
 
-7. **MATLAB Documentation**
+7. **Others**
+
+**MATLAB Documentation**
 
 <https://www.mathworks.com/help/matlab/?refresh=true>
 
