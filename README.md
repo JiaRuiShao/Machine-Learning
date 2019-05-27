@@ -34,14 +34,14 @@ h<sub>&theta;</sub>(x) = &theta;<sup>T</sup>X
 where
 
 ```
-X = 	[x0]		&theta= 	[&theta0]
-	[x1]				[&theta1]
-	[x2]				[&theta2]
-	[x3]				[&theta3]
+X = 	[x0]		θ = 		[θ0]
+	[x1]				[θ1]
+	[x2]				[θ2]
+	[x3]				[θ3]
 	[.]				  .
 	[.]				  .
 	[.]				  .
-	[xn]				[&thetan]
+	[xn]				[θn]
 ```
 
 2. **Gradient Descent for Multiple Variables**
@@ -154,7 +154,7 @@ If x<sub>1</sub> has range 1-1000 then x<sub>1</sub><sup>2</sup> becomes 1-10000
 
 Normal Equation: Method to solve for θ analytically.
 
-Cost function: J(θ) = ![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
+Cost function: ![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
 
 Let ∂J(θ)/∂θ<sub>j</sub> = 0 for every j;
 
@@ -1130,7 +1130,9 @@ double prediction = theta.transpose() * x;
 
 ![w2.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.9.PNG?raw=true)
 
-7. **MATLAB Documentation**
+7. **Others**
+
+**MATLAB Documentation**
 
 <https://www.mathworks.com/help/matlab/?refresh=true>
 
