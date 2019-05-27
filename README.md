@@ -48,7 +48,7 @@ X = 	[x0]		&theta= 	[&theta0]
 
 Cost function:
 
-J(0) = ![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
+![w2.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W2/w2.2.PNG?raw=true)
 
 Gradient Descent:
 
