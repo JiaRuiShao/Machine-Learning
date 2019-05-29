@@ -1156,3 +1156,5 @@ Python: A*B
 Others:
 
 For MATLAB, have to specify the file location in the beginning using `cd` function.
+
+Matlab index starts from 1 rather than 0.
