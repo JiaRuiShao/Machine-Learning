@@ -24,7 +24,8 @@ clear ; close all; clc
 %  contains the label.
 
 data = load('ex2data1.txt');
-X = data(:, [1, 2]); y = data(:, 3);
+X = data(:, [1, 2]); % exam scores
+y = data(:, 3); % labels
 
 %% ==================== Part 1: Plotting ====================
 %  We start the exercise by first plotting the data to understand the 
@@ -91,12 +92,19 @@ pause;
 %  optimal parameters theta.
 
 %  Set options for fminunc
-options = optimset('GradObj', 'on', 'MaxIter', 400);
+options = optimset('GradObj', 'on', 'MaxIter', 400); 
+% set the GradObj option to on, which tells fminunc that 
+% our function returns both the cost and the gradient.
+% set the MaxIter option to 400, so that 
+% fminunc will run for at most 400 steps before it terminates. 
+
 
 %  Run fminunc to obtain the optimal theta
 %  This function will return theta and the cost 
 [theta, cost] = ...
 	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
+% t calls your costFunction
+
 
 % Print theta to screen
 fprintf('Cost at theta found by fminunc: %f\n', cost);
