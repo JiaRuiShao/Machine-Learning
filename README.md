@@ -38,6 +38,13 @@ We are also covering regularization. Machine learning models need to generalize 
 
 This week, we are covering neural networks. Neural networks is a model inspired by how the brain works. It is widely used today in many applications: when your phone interprets and understand your voice commands, it is likely that a neural network is helping to understand your speech; when you cash a check, the machines that automatically read the digits also use neural networks.
 
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/4%20Neural%20Networks%20--%20Representation/README.md)
+
+[Neural Networks -- Representation Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/4%20Neural%20Networks%20--%20Representation/Neural%20Networks%20--%20Representation%20Slides.pdf)
+
+[Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/4%20Neural%20Networks%20--%20Representation/Multi-class%20Classification%20AND%20Neural%20Networks%20Exercise)
+
+
 ### 5 Neural Networks: Learning
 
 In Week 5, you will be learning how to train Neural Networks. The Neural Network is one of the most powerful learning algorithms (when a linear classifier doesn't work, this is what I usually turn to), and this week's videos explain the 'backpropagation' algorithm for training these models. In this week's programming assignment, you'll also get to implement this algorithm and see it work for yourself.
