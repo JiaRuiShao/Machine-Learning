@@ -49,6 +49,12 @@ This week, we are covering neural networks. Neural networks is a model inspired 
 
 In Week 5, you will be learning how to train Neural Networks. The Neural Network is one of the most powerful learning algorithms (when a linear classifier doesn't work, this is what I usually turn to), and this week's videos explain the 'backpropagation' algorithm for training these models. In this week's programming assignment, you'll also get to implement this algorithm and see it work for yourself.
 
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/5%20Neural%20Networks%20--%20Learning/README.md)
+
+[Neural Networks Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/5%20Neural%20Networks%20--%20Learning/Neural%20Network%20Slides.pdf)
+
+[Logistic Neural Network Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/5%20Neural%20Networks%20--%20Learning/Logistic%20Neural%20Network%20Exercise)
+
 ### 6 Advice for Applying Machine Learning, Mahine Learning System Design
 
 In Week 6, you will be learning about systematically improving your learning algorithm. The videos for this week will teach you how to tell when a learning algorithm is doing poorly, and describe the 'best practices' for how to 'debug' your learning algorithm and go about improving its performance.
