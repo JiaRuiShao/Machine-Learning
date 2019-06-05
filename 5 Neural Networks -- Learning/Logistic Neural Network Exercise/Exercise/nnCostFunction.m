@@ -16,7 +16,7 @@ function [J grad] = nnCostFunction(nn_params, ...
 
 % Reshape nn_params back into the parameters Theta1 and Theta2, the weight matrices
 % for our 2 layer neural network
-Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
+Theta1 = reshape(nn_params(1:hidden_layer_size*(input_layer_size + 1)), ...
                  hidden_layer_size, (input_layer_size + 1));
 
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
@@ -62,24 +62,66 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% I. Forward propagation
 
+a1 = X;
+a1_1 = [ones(m, 1) X]; 
+% dim of a1_1 is (m, # of 1st layer units/example features + 1), here is (5000,401)
 
+z2 = a1_1 * Theta1.';
+a2 = sigmoid(z2); 
+% dim of a2 is (m, # of 2nd layer units), here is (5000,25)
+a2_2 = [ones(m, 1) a2]; 
+% dim of a2_2 is (m, # of 2nd layer units + 1), here is (5000,26)
 
+z3 = a2_2 * Theta2.';
+a3 = sigmoid(z3);
+% dim of a3 is (m, # of 3nd layer units/output layer k here), here is (5000,10)
 
+% change y to a (m,k) matrix
+Y = zeros(m,num_labels);
+for i = 1:m
+	Y(i,y(i)) = 1; % dim of Y is (m,k)
+end
 
+% compute the cost J(θ)
+log_cost = sum(sum(Y.*log(a3) + (1-Y).*log(1-a3)));
+% notice that the cost of theta should not include the biased units
+theta1sqr = sum(sum(Theta1(:,[2:end]).^2)); 
+theta2sqr = sum(sum(Theta2(:,[2:end]).^2));
 
+J = -1/m * log_cost + (lambda/(2*m)) * (theta1sqr+theta2sqr);
 
+% II. Back Propagation
 
+% calculate delta
+delta3 = a3 - Y;
+% dim (m,k)
 
+delta2 = (delta3 * Theta2) .* sigmoidGradient([ones(m, 1) z2]) % dim (m,26)
+delta2 = delta2(:,[2:end]); % Notice that δ delta does not include bias unit
+% dim (m,25)
 
+% calculate Delta
+Delta1 = zeros(size(Theta1));
+Delta1 = delta2.' * a1_1; % dim (25,401)
 
+Delta2 = zeros(size(Theta2));
+Delta2 = delta3.' * a2_2; % dim (10,26)
 
+% Before Regularization
+% Theta1_grad = 1/m * Delta1;
+% Theta2_grad = 1/m * Delta2;
 
+% After Regularization
+theta1_zero = Theta1;
+theta1_zero(:,1) = 0;
 
+theta2_zero = Theta2;
+theta2_zero(:,1) = 0;
 
-
-
-
+Theta1_grad = 1/m * Delta1 + lambda/m * theta1_zero;
+Theta2_grad = 1/m * Delta2 + lambda/m * theta2_zero;
 % -------------------------------------------------------------
 
 % =========================================================================

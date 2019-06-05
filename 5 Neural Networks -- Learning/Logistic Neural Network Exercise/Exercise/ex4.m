@@ -19,10 +19,10 @@
 clear ; close all; clc
 
 %% Setup the parameters you will use for this exercise
-input_layer_size  = 400;  % 20x20 Input Images of Digits
-hidden_layer_size = 25;   % 25 hidden units
-num_labels = 10;          % 10 labels, from 1 to 10   
-                          % (note that we have mapped "0" to label 10)
+input_layer_size  = 400; % 20x20 Input Images of Digits
+hidden_layer_size = 25; % 25 hidden units
+num_labels = 10; % 10 labels, from 1 to 10   
+% (note that we have mapped "0" to label 10)
 
 %% =========== Part 1: Loading and Visualizing Data =============
 %  We start the exercise by first loading and visualizing the dataset. 
@@ -55,9 +55,9 @@ fprintf('\nLoading Saved Neural Network Parameters ...\n')
 load('ex4weights.mat');
 
 % Unroll parameters 
-nn_params = [Theta1(:) ; Theta2(:)];
+nn_params = [Theta1(:) ; Theta2(:)];% size is (25x401+10x26,1), which is (10285,1)
 
-%% ================ Part 3: Compute Cost (Feedforward) ================
+%% ================ Part 3: Compute Cost (forward propagation) ================
 %  To the neural network, you should first start by implementing the
 %  feedforward part of the neural network that returns the cost only. You
 %  should complete the code in nnCostFunction.m to return cost. After
@@ -183,7 +183,7 @@ fprintf('\nTraining Neural Network... \n')
 
 %  After you have completed the assignment, change the MaxIter to a larger
 %  value to see how more training helps.
-options = optimset('MaxIter', 50);
+options = optimset('MaxIter', 50); % try setting MaxIter to 400
 
 %  You should also try different values of lambda
 lambda = 1;
