@@ -301,11 +301,11 @@ end
 
 logistic regression cost function for neural networks without regularization:
 
-![w5.7]()
+![w5.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W5/w5.7.PNG?raw=true)
 
 logistic regression cost function for neural networks with regularization:
 
-![w5.8]()
+![w5.8](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W5/w5.8.PNG?raw=true)
 
 ```matlab
 % compute the cost J(θ)
@@ -361,7 +361,7 @@ Delta2 = zeros(size(Theta2));
 Delta2 = delta3.' * a2_2; % dim (10,26)
 ```
 
-(4) gradient = ![w5.9]()
+(4) gradient = ![w5.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W5/w5.9.PNG?raw=true)
 
 ```matlab
 theta1_zero = Theta1;
