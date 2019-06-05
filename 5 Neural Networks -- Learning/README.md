@@ -95,7 +95,7 @@ Where L is our total number of layers and a<sup>(L)</sup> is the vector of outpu
 
 The delta values of layer l are calculated by multiplying the delta values in the next layer with the theta matrix of layer l. We then element-wise multiply that with a function called g', or g-prime, which is the derivative of the activation function g evaluated with the input values given by z<sup>(l)</sup>
 
-**5.Δ<sub>i</sub><sub>j</sub><sup>(l)</sup> := Δ<sub>i</sub><sub>j</sub><sup>(l)</sup> + a<sub>j</sub><sup>(L)</sup> \* 𝛿<sub>i</sub><sup>(l+1)</sup> or with vectorization, Δ<sup>(l)</sup> := Δ<sup>(l)</sup> + 𝛿<sup>(l+1)</sup>\*(a<sup>(l)</sup>)<sup>T</sup>**
+**5.Δ<sub>i</sub><sub>j</sub><sup>(l)</sup> := Δ<sub>i</sub><sub>j</sub><sup>(l)</sup> + a<sub>j</sub><sup>(l)</sup> \* 𝛿<sub>i</sub><sup>(l+1)</sup> or with vectorization, Δ<sup>(l)</sup> := Δ<sup>(l)</sup> + 𝛿<sup>(l+1)</sup>\*(a<sup>(l)</sup>)<sup>T</sup>**
 
 Hence we update our new Delta Δ matrix:
 
@@ -168,7 +168,6 @@ Implement:
 
 ```
 gradApprox = (J(theta + EPSILON) - J(theta - EPSILON))/(2*EPSILON)
-
 ```
 
 With multiple theta matrices, we can approximate the derivative with respect to θ<sub>j</sub> as follows:
@@ -243,14 +242,96 @@ Reasonable default: >= 1 hidden layer, same \# of hidden units in each hidden la
 
 **Step 2: Randomly initialize the weights**
 
+Initialize each θ<sub>i</sub><sub>j</sub><sup>(l)</sup> to a random value in [-ε, ε]
+
+Eg:
+
+```matlab
+% If the dimensions of Theta1 is h1x(n+1), Theta2 is h2x(h1+1) and Theta3 is 1x(h2+1).
+Theta1 = rand(h1,n+1) * (2 * INIT_EPSILON) - INIT_EPSILON;
+Theta2 = rand(h2,h1+1) * (2 * INIT_EPSILON) - INIT_EPSILON;
+Theta3 = rand(1,h2+1) * (2 * INIT_EPSILON) - INIT_EPSILON;
+```
 
 **Step 3: Implement forward propagation to get h<sub>θ</sub>(x<sup>(i)</sup>) for any x<sup>(i)</sup>**
 
+a<sup>(1)</sup> = x
+
+z<sup>(2)</sup> = θ<sup>(1)</sup> * a<sup>(1)</sup>
+
+a<sup>(2)</sup> = g(z<sup>(2)</sup>) [add a<sub>0</sub><sup>(2)</sup>]
+
+z<sup>(3)</sup> = θ<sup>(2)</sup> * a<sup>(2)</sup>
+
+a<sup>(3)</sup> = g(z<sup>(3)</sup>) [add a<sub>0</sub><sup>(3)</sup>]
+
+...
+
+z<sup>(L)</sup> = θ<sup>(L-1)</sup> * a<sup>(L-1)</sup>
+
+a<sup>(L)</sup> = g(z<sup>(L)</sup>)
+
 **Step 4: Compute the cost function J(θ)**
+
+logistic regression cost function for neural networks without regularization:
+
+![w5.7]()
+
+logistic regression cost function for neural networks with regularization:
+
+![w5.8]()
 
 **Step 5: Implement backpropagation to compute partial derivatives ∂J(θ)/∂θ<sub>n</sub>**
 
+𝛿<sub>j</sub><sup>(l)</sup> = "error" of node j in layer l.
+
+using y<sup>(i)</sup>, compute 𝛿<sup>(L)</sup> = a<sup>(L)</sup> - y<sup>(i)</sup>:
+
+𝛿<sub>j</sub><sup>(L)</sup> = a<sub>j</sub><sup>(L)</sup> - y<sub>j</sub> [Note here a<sub>j</sub><sup>(L)</sup> is (h<sub>θ</sub>(x))<sub>j</sub><sup>(L)</sup>]
+
+...
+
+𝛿<sup>(3)</sup> = (θ<sup>(3)</sup>)<sup>T</sup>\*𝛿<sup>(4)</sup>.\*g'(z<sup>(3)</sup>) = (θ<sup>(3)</sup>)<sup>T</sup> \* 𝛿<sup>(4)</sup>.\*(a<sup>(3)</sup>.\*(1-a<sup>(3)</sup>))
+
+𝛿<sup>(2)</sup> = (θ<sup>(2)</sup>)<sup>T</sup>\*𝛿<sup>(3)</sup>.\*g'(z<sup>(2)</sup>) = (θ<sup>(2)</sup>)<sup>T</sup> \* 𝛿<sup>(3)</sup>.\*(a<sup>(2)</sup>.\*(1-a<sup>(2)</sup>))
+
+There's no 𝛿<sup>(1)</sup> term b/c the first layer, which is the input layer, we don't want to change the input features we observed in our training sets, so that doesn't have any error associated with it. 
+
+**Or**
+
+We can use advanced optimization functions such as "fminunc()".
+
+First, we have to "unroll" all the elements and put them into one long vector:
+
+UNFINISHED
+
 **Step 6: Use gradient checking to confirm that your backpropagation works. Then disable gradient checking**
+
+∂J(θ)/∂θ<sub>1</sub> ≈ (J(θ<sub>1</sub>+ε, θ<sub>2</sub>, ..., θ<sub>n</sub>) - J(θ<sub>1</sub>-ε, θ<sub>2</sub>, ..., θ<sub>n</sub>))/2ε
+
+∂J(θ)/∂θ<sub>2</sub> ≈ (J(θ<sub>1</sub>, θ<sub>2</sub>+ε, ..., θ<sub>n</sub>) - J(θ<sub>1</sub>, θ<sub>2</sub>-ε, ..., θ<sub>n</sub>))/2ε
+
+...
+
+∂J(θ)/∂θ<sub>n</sub> ≈ (J(θ<sub>1</sub>, θ<sub>2</sub>, ..., θ<sub>n</sub>+ε) - J(θ<sub>1</sub>, θ<sub>2</sub>, ..., θ<sub>n</sub>-ε))/2ε
+
+Implementation -- In octave/matlab we can do it as follows:
+
+```matlab
+EPSILON = 1e-4; 
+% a small value for ε(epsilon) guarantees that the math works out properly
+% if the value for ϵ is too small, we can end up with numerical problems
+
+for i = 1:n,
+    thetaPlus = theta;
+    thetaPlus(i) += EPSILON;
+    thetaMinus = theta;
+    thetaMinus(i) -= EPSILON;
+    gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*EPSILON)
+end;
+```
+
+Check that `gradApprox` ≈ `DVec` (got from back propagation)
 
 **Step 7: Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta**
 
