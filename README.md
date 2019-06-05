@@ -61,6 +61,12 @@ In Week 6, you will be learning about systematically improving your learning alg
 
 We will also be covering machine learning system design. To optimize a machine learning algorithm, you’ll need to first understand where the biggest improvements can be made. In these lessons, we discuss how to understand the performance of a machine learning system with multiple parts, and also how to deal with skewed data.
 
+[Note]()
+
+[Slides]()
+
+[Exercise]()
+
 ### 7 Support Vector Machines
 
 This week, you will be learning about the support vector machine (SVM) algorithm. SVMs are considered by many to be the most powerful 'black box' learning algorithm, and by posing a cleverly-chosen optimization objective, one of the most widely used learning algorithms today.
