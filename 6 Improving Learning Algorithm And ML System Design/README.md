@@ -40,7 +40,7 @@ Use **Machine Learning diagnostic**, which is a test that you can run to gain in
 
 hypothesis overfit:
 
-![w6.1]()
+![w6.1](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.1.PNG?raw=true)
 
 How to tell?
 
@@ -50,7 +50,7 @@ How to tell?
 
 Randomly split the data into two portion, training set and test set (usually 70% 30% split)
 
-![w6.2]()
+![w6.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.2.PNG?raw=true)
 
 Training/Testing procedure for linear regression
 
@@ -70,7 +70,7 @@ Note: d = degree of polynomial
 
 minimize the training error, which would give you some parameter θ. Use these θ to measure the performance on the test set and see which model has the lowest test set error
 
-![w6.4]()
+![w6.4](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.4.PNG?raw=true)
 
 Problem: the performance of the hypothesis on that test set may not be a fair estimate of how well the hypothesis is likely to do on examples we haven't seen before. So it isn't such a good idea to select your model using the test set and then using the same test set to report the error.
 
@@ -78,14 +78,14 @@ So we're going to **split the data set into three pieces: training set (60%), cr
 
 Training/validation/testing error
 
-![w6.5]()
+![w6.5](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.5.PNG?raw=true)
 
 PS: validation error is just like the training error on the validation data set.
 
 Now instead of measuring the performance of a model on the test set, we're going to test them on the validation set. Pick the hypothesis(model) with the lowest cross validation error and evaluate it on the 
 test set.
 
-![w6.6]()
+![w6.6](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.6.PNG?raw=true)
 
 Steps:
 
@@ -110,7 +110,7 @@ If you run a learning algorithm and it doesn't do as long as you are hoping, alm
 
 In this section we examine the relationship between the degree of the polynomial d and the underfitting or overfitting of our hypothesis.
 
-![w6.7]()
+![w6.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.7.PNG?raw=true)
 
 ![summary](https://www.learnopencv.com/wp-content/uploads/2017/02/Bias-Variance-Tradeoff-In-Machine-Learning-1.png)
 
@@ -134,15 +134,15 @@ How to automatically choose a good value for the regularization parameter?
 
 (1) Define  J<sub>train</sub>(θ), J<sub>cv</sub>(θ) and J<sub>test</sub>(θ) as cost function **without regularization**.
 
-![w6.10]()
+![w6.10](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.10.PNG?raw=true)
 
 (2) Try some range of value of λ
 
-![w6.11]()
+![w6.11](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.11.PNG?raw=true)
 
 (3) Choose the λ with the lowest cross validation error
 
-![w6.12]()
+![w6.12](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.12.PNG?raw=true)
 
 (4) Apply the best combo θ and λ on J<sub>test</sub>(θ) to see if it has a good generalization of the problem
 
@@ -198,7 +198,7 @@ Diagnosing Neural Networks
 
 Small neural network vs. Large neural network
 
-![w6.13]()
+![w6.13](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.13.PNG?raw=true)
 
 - A neural network with fewer parameters is **prone to underfitting**. It is also computationally cheaper.
 
@@ -285,7 +285,7 @@ Let's say we're trying to decide whether or not we should treat words like disco
 
 In natural language processing, the way that this is done is actually using a type of software called **stemming software**. (search porter stemmer if you're interested)
 
-![](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/kky-ouM6EeacbA6ydECl3A_01b1fa64fcc9a7eb5da8e946f6a12636_Screenshot-2017-01-25-12.08.23.png?expiry=1559952000000&hmac=2PaA0SDXBigH9_sMlucRY4KNjihc1fozUlM10ROb-_I)
+![example](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/kky-ouM6EeacbA6ydECl3A_01b1fa64fcc9a7eb5da8e946f6a12636_Screenshot-2017-01-25-12.08.23.png?expiry=1559952000000&hmac=2PaA0SDXBigH9_sMlucRY4KNjihc1fozUlM10ROb-_I)
 
 For example if we use stemming, which is the process of treating the same word with different forms (fail/failing/failed) as one word (fail), and get a 3% error rate instead of 5%, then we should definitely add it to our model. However, if we try to distinguish between upper case and lower case letters and end up getting a 3.2% error rate instead of 3%, then we should avoid using this new feature. 
 
@@ -317,7 +317,7 @@ When we're faced with such a skewed classes therefore we would want to come up w
 
 ![precision recall](https://cdn-images-1.medium.com/max/1600/1*pOtBHai4jFd-ujaNXPilRg.png)
 
-![w6.14]()
+![w6.14](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.14.PNG?raw=true)
 
 Precision = true positive / predicted positive
 
@@ -355,7 +355,7 @@ Predict 0 if h<sub>θ</sub>(x) < 0.3
 
 Average of precision and recall is not a good method to evaluate the performance of the learning algorithm.
 
-![w6.15]()
+![w6.15](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W6/w6.15.PNG?raw=true)
 
 Instead, we use F score.
 
