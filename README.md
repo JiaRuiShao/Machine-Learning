@@ -18,7 +18,7 @@ We’re also going to go over how to use Octave. You’ll work on programming as
 
 [Matlab Tutorial Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/2%20Linear%20Regression%20with%20Multiple%20Variables/Octave%2C%20Matlab%20Tutorial%20Slides.pdf)
 
-[Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/2%20Linear%20Regression%20with%20Multiple%20Variables/Exercise/MATLAB)
+[Linear Regression Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/2%20Linear%20Regression%20with%20Multiple%20Variables/Exercise/MATLAB)
 
 ### 3 Classification(Logistic Regression), Regularization
 
@@ -32,7 +32,7 @@ We are also covering regularization. Machine learning models need to generalize 
 
 [Regularization Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/3%20Classification(Logistic%20Regression)%20AND%20Regularization/Regularization%20Slides.pdf)
 
-[Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/3%20Classification(Logistic%20Regression)%20AND%20Regularization/Classification%20and%20Regularization%20Exercise/Exercise)
+[Binary Classification and Regularization Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/3%20Classification(Logistic%20Regression)%20AND%20Regularization/Classification%20and%20Regularization%20Exercise/Exercise)
 
 ### 4 Neural Networks: Representation
 
@@ -42,7 +42,7 @@ This week, we are covering neural networks. Neural networks is a model inspired 
 
 [Neural Networks -- Representation Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/4%20Neural%20Networks%20--%20Representation/Neural%20Networks%20--%20Representation%20Slides.pdf)
 
-[Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/4%20Neural%20Networks%20--%20Representation/Multi-class%20Classification%20AND%20Neural%20Networks%20Exercise)
+[Multi-class Classification AND Neural Networks Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/4%20Neural%20Networks%20--%20Representation/Multi-class%20Classification%20AND%20Neural%20Networks%20Exercise)
 
 
 ### 5 Neural Networks: Learning
