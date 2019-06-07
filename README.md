@@ -61,15 +61,23 @@ In Week 6, you will be learning about systematically improving your learning alg
 
 We will also be covering machine learning system design. To optimize a machine learning algorithm, you’ll need to first understand where the biggest improvements can be made. In these lessons, we discuss how to understand the performance of a machine learning system with multiple parts, and also how to deal with skewed data.
 
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/6%20Improving%20Learning%20Algorithm%20And%20ML%20System%20Design/README.md)
+
+[Improving Learning Algorithm Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/6%20Improving%20Learning%20Algorithm%20And%20ML%20System%20Design/Improving%20Learning%20Algorithm%20Slides.pdf)
+
+[Machine Learning System Design Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/6%20Improving%20Learning%20Algorithm%20And%20ML%20System%20Design/Machine%20Learning%20System%20Design%20Slides.pdf)
+
+[Regularized Linear Regression and Bias-Variance Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/6%20Improving%20Learning%20Algorithm%20And%20ML%20System%20Design/Regularized%20Linear%20Regression%20and%20Bias-Variance%20Exercise/Exercise)
+
+### 7 Support Vector Machines
+
+This week, you will be learning about the support vector machine (SVM) algorithm. SVMs are considered by many to be the most powerful 'black box' learning algorithm, and by posing a cleverly-chosen optimization objective, one of the most widely used learning algorithms today.
+
 [Note]()
 
 [Slides]()
 
 [Exercise]()
-
-### 7 Support Vector Machines
-
-This week, you will be learning about the support vector machine (SVM) algorithm. SVMs are considered by many to be the most powerful 'black box' learning algorithm, and by posing a cleverly-chosen optimization objective, one of the most widely used learning algorithms today.
 
 ### 8 Unsupervised Learning, Dimensionality Reduction
 
@@ -77,16 +85,40 @@ This week, you will be learning about unsupervised learning. While supervised le
 
 We will also be introducing Principal Components Analysis, which is used to speed up learning algorithms, and is sometimes incredibly useful for visualizing and helping you to understand your data.
 
+[Note]()
+
+[Slides]()
+
+[Exercise]()
+
 ### 9 Anomaly Detection, Recommender Systems
 
 This week, we will be covering anomaly detection which is widely used in fraud detection (e.g. ‘has this credit card been stolen?’). Given a large number of data points, we may sometimes want to figure out which ones vary significantly from the average. For example, in manufacturing, we may want to detect defects or anomalies. We show how a dataset can be modeled using a Gaussian distribution, and how the model can be used for anomaly detection.
 
 We will also be covering recommender systems, which are used by companies like Amazon, Netflix and Apple to recommend products to their users. Recommender systems look at patterns of activities between different users and different products to produce these recommendations. In these lessons, we introduce recommender algorithms such as the collaborative filtering algorithm and low-rank matrix factorization.
 
+[Note]()
+
+[Slides]()
+
+[Exercise]()
+
 ### 10 Large Scale Machine Learning
 
 This week, we will be covering large scale machine learning. Machine learning works best when there is an abundance of data to leverage for training. With the amount data that many websites/companies are gathering today, knowing how to handle ‘big data’ is one of the most sought after skills in Silicon Valley.
 
+[Note]()
+
+[Slides]()
+
+[Exercise]()
+
 ### 11 Application Example: Photo OCR
 
 This week, we will walk you through a complex, end-to-end application of machine learning, to the application of Photo OCR. Identifying and recognizing objects, words, and digits in an image is a challenging task. We discuss how a pipeline can be built to tackle this problem and how to analyze and improve the performance of such a system.
+
+[Note]()
+
+[Slides]()
+
+[Exercise]()
