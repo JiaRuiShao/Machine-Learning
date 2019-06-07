@@ -35,7 +35,7 @@ load ('ex5data1.mat');
 m = size(X, 1);
 
 % Plot training data
-plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
+plot(X, y, 'k*', 'MarkerSize', 8, 'LineWidth', 1.5);
 xlabel('Change in water level (x)');
 ylabel('Water flowing out of the dam (y)');
 
@@ -47,7 +47,7 @@ pause;
 %  regression. 
 %
 
-theta = [1 ; 1];
+theta = [1 ; 1]; % dim (2,1)
 J = linearRegCostFunction([ones(m, 1) X], y, theta, 1);
 
 fprintf(['Cost at theta = [1 ; 1]: %f '...
@@ -104,7 +104,7 @@ pause;
 %                 see a graph with "high bias" -- Figure 3 in ex5.pdf 
 %
 
-lambda = 0;
+lambda = 0; % Here we set regularization parameter λ to zero b/c there're only 2 parameters in this model
 [error_train, error_val] = ...
     learningCurve([ones(m, 1) X], y, ...
                   [ones(size(Xval, 1), 1) Xval], yval, ...
@@ -164,7 +164,7 @@ pause;
 %  lambda to see how the fit and learning curve change.
 %
 
-lambda = 0;
+lambda = 0; % try different lambda
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit
@@ -201,8 +201,8 @@ pause;
 %  "best" lambda value.
 %
 
-[lambda_vec, error_train, error_val] = ...
-    validationCurve(X_poly, y, X_poly_val, yval);
+[lambda_vec, error_train, error_val, error_test] = ...
+    validationCurve(X_poly, y, X_poly_val, yval, X_poly_test, ytest);
 
 close all;
 plot(lambda_vec, error_train, lambda_vec, error_val);
@@ -210,11 +210,16 @@ legend('Train', 'Cross Validation');
 xlabel('lambda');
 ylabel('Error');
 
-fprintf('lambda\t\tTrain Error\tValidation Error\n');
+fprintf('lambda\t\tTrain Error\tValidation Error\tTest Error\n');
 for i = 1:length(lambda_vec)
-	fprintf(' %f\t%f\t%f\n', ...
-            lambda_vec(i), error_train(i), error_val(i));
+	fprintf(' %f\t%f\t%f\t%f\n', ...
+            lambda_vec(i), error_train(i), error_val(i), error_test(i));
 end
 
-fprintf('Program paused. Press enter to continue.\n');
+fprintf('\nwe found that the best lambda using cv data set is 3.\n');
+
+fprintf('Test error when lambda equals to 3 is:');
+disp(error_test(9));
+
+fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
