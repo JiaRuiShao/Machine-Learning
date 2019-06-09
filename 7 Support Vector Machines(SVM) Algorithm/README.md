@@ -1,44 +1,96 @@
 ## Support Vector Machine(SVM) Algorithm -- Separation of classes
 
+Which points should influence optimality? 
+
++ All points? 
+	+ Linear regression 
+	+ Neural nets 
+
+- Or only “difficult points” close to decision boundary?
+	+ **Support vector machines**
+
 SVMs are considered by many to be the most powerful 'black box' learning algorithm, and by posing a cleverly-chosen optimization objective, one of the most widely used learning algorithms today.
 
 ### 0. Introduction to SVM
 
-	A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. In two dimentional space this hyperplane is a line dividing a plane in two parts where in each class lay in either side.
+What is Support Vector Machine?
 
-Suppose you are given plot of two label classes on graph as shown in image below. Can you decide a separating line for the classes?
+	The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N — the number of features) that distinctly classifies the data points.
 
-![A](https://cdn-images-1.medium.com/max/1600/1*BpeH5_M58kJ5xXfwzxI8yA.png)
+_“Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges. However,  it is mostly used in classification problems. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate. Then, we perform classification by finding the hyper-plane that differentiate the two classes very well_
 
-You might have come up with something similar to following image. It fairly separates the two classes. Any point that is left of line falls into black circle class and on right falls into blue square class. **Separation of classes. That’s what SVM does**. It finds out a line/ hyper-plane (in multidimensional space that separate outs classes). 
+![SVM](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)
 
-![B](https://cdn-images-1.medium.com/max/1600/1*Sg6wjASoZHPphF10tcPZGg.png)
+![Possible hyperplanes](https://cdn-images-1.medium.com/max/960/0*0o8xIA4k3gXUDCFU.png)
 
-One more parameter is **kernel**. It **defines whether we want a linear of linear separation**. This is also discussed in next section.
+**Hyperplane**
 
-Kernel can be divided by linear and polynomial kernel.
+To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our objective is to find a plane that has the maximum margin, i.e the maximum distance between data points of both classes. 
 
-For **linear kernel** the equation for prediction for a new input using the dot product between the input (x) and each support vector (xi) is calculated as follows:
+![Hyperplanes in 2D and 3D feature space
+](https://cdn-images-1.medium.com/max/1280/1*ZpkLQf2FNfzfH4HXeMw4MQ.png)
 
-```
-f(x) = B(0) + sum(ai * (x,xi))
-```
+**Hyperplanes are decision boundaries that help classify the data points**. Data points falling on either side of the hyperplane can be attributed to different classes. Also, the dimension of the hyperplane depends upon the number of features. If the number of input features is 2, then the hyperplane is just a line. If the number of input features is 3, then the hyperplane becomes a two-dimensional plane. It becomes difficult to imagine when the number of features exceeds 3.
 
-This is an equation that involves calculating the inner products of a new input vector (x) with all support vectors in training data. The coefficients B0 and ai (for each input) must be estimated from the training data by the learning algorithm.
+![Support Vectors](https://cdn-images-1.medium.com/max/1280/0*ecA4Ls8kBYSM5nza.jpg)
 
-The **polynomial kernel** can be written as 
+**Support Vectors**
 
-```
-K(x,xi) = 1 + sum(x * xi)^d 
-```
+- Support vectors are the data points that lie closest to the decision boundary (or hyperplane) and influence the position and orientation of the hyperplane
 
-and exponential kernel as 
+- Support vectors are the critical elements of the training set 
 
-```
-K(x,xi) = exp(-gamma * sum((x — xi²))
-```
+- They are the data points most difficult to classify
 
-Polynomial and exponential kernels calculates separation line in higher dimension. This is called __kernel trick__.
+- Moving a support vector moves the decision boundary
+while moving the other vectors has no effect
+
+
+Using these support vectors, we maximize the margin of the classifier. Deleting the support vectors will change the position of the hyperplane b/c the optimization algorithm to generate the weights proceeds in such a way that only the support vectors determine the weights and thus the boundary. Support Vectors are the points that help us build our SVM.
+
+**Support Vector Machine (SVM)** finds an optimal solution.
+
+- SVMs maximize the margin
+
+- The decision function is fully specified by a (usually very small) subset of training samples, the support vectors. 
+
+- 
+
+**How can we identify the right hyper-plane?**
+
+**Identify the right hyper-plane (Scenario-1)**: Here, we have three hyper-planes (A, B and C). Now, identify the right hyper-plane to classify star and circle.
+
+![1](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_21.png)
+
+**Identify the right hyper-plane (Scenario-2)**: Here, we have three hyper-planes (A, B and C) and all are segregating the classes well. Now, How can we identify the right hyper-plane?
+
+![2](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_3.png) 
+
+Here, maximizing the distances between nearest data point (either class) and hyper-plane will help us to decide the right hyper-plane. This distance is called as __Margin__.
+
+![3](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_4.png)
+
+Above, you can see that the margin for hyper-plane C is high as compared to both A and B. Hence, we name the right hyper-plane as C. Another lightning reason for selecting the hyper-plane with higher margin is robustness. If we select a hyper-plane having low margin then there is high chance of miss-classification.
+
+**Identify the right hyper-plane (Scenario-3)**
+
+![4](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_5.png)
+
+Some of you may have selected the hyper-plane B as it has higher margin compared to A. But, here is the catch, SVM selects the hyper-plane which classifies the classes accurately prior to maximizing margin. Here, hyper-plane B has a classification error and A has classified all correctly. Therefore, the right hyper-plane is A.
+
+**Find the hyper-plane to segregate to classes (Scenario-4)**: In the scenario below, we can’t have linear hyper-plane between the two classes, so how does SVM classify these two classes? Till now, we have only looked at the linear hyper-plane.
+
+![5](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_8.png)
+
+SVM can solve this problem. Easily! It solves this problem by introducing additional feature. Here, we will add a new feature z=x^2+y^2. Now, let’s plot the data points on axis x and z:
+
+![6](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_9.png)
+
+In SVM, it is easy to have a linear hyper-plane between these two classes. But, another burning question which arises is, should we need to add this feature manually to have a hyper-plane. No, SVM has a technique called the **kernel trick**. These are functions which takes low dimensional input space and transform it to a higher dimensional space i.e. it **converts not separable problem to separable problem, these functions are called kernels**. It is mostly useful in non-linear separation problem. Simply put, it does some extremely complex data transformations, then find out the process to separate the data based on the labels or outputs you’ve defined.
+
+When we look at the hyper-plane in original input space it looks like a circle:
+
+![7](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_10.png)
 
 ### I. Large Margin Classification
 
@@ -67,6 +119,11 @@ Support Vector Machine(SVM): an alternative to logistic regression
 
 ![w7.4](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.4.PNG?raw=true)
 
+Large Margin Intuition
+
+In logistic regression, we take the output of the linear function and squash the value within the range of [0,1] using the sigmoid function. If the squashed value is greater than a threshold value(0.5) we assign it a label 1, else we assign it a label 0. In SVM, we take the output of the linear function and if that output is greater than 1, we identify it with one class and if the output is -1, we identify is with another class. Since the threshold values are changed to 1 and -1 in SVM, we obtain this reinforcement range of values([-1,1]) which acts as margin.
+
+
 Q: Consider the following minimization problems:
 
 ![w7.3](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.3.PNG?raw=true)
@@ -80,7 +137,7 @@ These two optimization problems will give the same value of θ (i.e., the same v
 
 2. **Large Margin Classifer**
 
-Sometimes people talk about support vector machines, as large margin classifiers.
+In the SVM algorithm, we are looking to maximize the margin between the data points and the hyperplane. sO Sometimes people call support vector machines as large margin classifiers.The loss function that helps maximize the margin is the loss function J.
 
 Here's the cost function for the support vector machine:
 
@@ -133,7 +190,7 @@ If we project vector v on vector u (green line):
 
 - u<sup>T</sup> \* v = p \* ||u|| = u1 v1 + u2 v2 = v<sup>T</sup> \* v
 
-**SVM decision boundary: projections**
+**SVM decision boundary: Hyperplanes**
 
 To simplify, we assume features n to be 2 and θ<sub>0</sub> to be 0.
 
@@ -143,7 +200,7 @@ To simplify, we assume features n to be 2 and θ<sub>0</sub> to be 0.
 
 When θ0 = 0, this means the vector passes through the origin
 
-θ projection will always be 90 degrees to the decision boundary
+θ projection will always be 90 degrees to the decision boundary.
 
 ![w7.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.9.png?raw=true)
 
@@ -260,6 +317,22 @@ Other choices of kernel:
 Multi-class classification:
 
 ![w7.22](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.22.png?raw=true)
+
+**Pros and Cons associated with SVM**
+
+**Pros**:
+
+- Because it is quadratic, the surface is a paraboloid, with just a single global minimum
+- It works really well with clear margin of separation
+- It is effective in high dimensional spaces
+- It is effective in cases where number of dimensions is greater than the number of samples
+- It uses a subset of training points in the decision function (called support vectors), so it is also memory efficient
+
+**Cons**:
+
+- It doesn’t perform well, when we have large data set because the required training time is higher
+- It also doesn’t perform very well, when the data set has more noise i.e. target classes are overlapping
+- SVM doesn’t directly provide probability estimates, these are calculated using an expensive five-fold cross-validation. It is related SVC method of Python scikit-learn library
 
 **Logistic Regression vs SVMs**
 
