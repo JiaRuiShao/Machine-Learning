@@ -118,7 +118,7 @@ Q: Consider the training set to the right, where "x" denotes positive examples (
 
 **Vector inner product**
 
-![w7.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.7.PNG?raw=true)
+![w7.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.7.png?raw=true)
 
 - u<sup>T</sup> \* v is also called inner product
 
@@ -139,13 +139,13 @@ To simplify, we assume features n to be 2 and θ<sub>0</sub> to be 0.
 
 θ<sup>T</sup> \* x<sup>(i)</sup> = p<sup>(i)</sup> * ||θ|| = θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>2</sub>
 
-![w7.8](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.8.PNG?raw=true)
+![w7.8](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.8.png?raw=true)
 
 When θ0 = 0, this means the vector passes through the origin
 
 θ projection will always be 90 degrees to the decision boundary
 
-![w7.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.9.PNG?raw=true)
+![w7.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.9.png?raw=true)
 
 **Decision boundary choice 1: graph on the left**
 
@@ -185,7 +185,7 @@ A: 1/2
 
 1. **Non-linear decision boundary**
 
-![w7.11](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.11.PNG?raw=true)
+![w7.11](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.11.png?raw=true)
 
 Given the data, is there a different or better choice of the features f1, f2, f3 … fn?
 
@@ -209,7 +209,7 @@ compute the kernel with similarity between X and a landmark
 
 ![w7.13](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.13.PNG?raw=true)
 
-![w7.14](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.14.PNG?raw=true)
+![w7.14](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.14.png?raw=true)
 
 As you increase sigma square, the value of the feature falls away much more slowly with moving away from l1.
 
@@ -217,19 +217,19 @@ As you increase sigma square, the value of the feature falls away much more slow
 
 Where to get l<sup>(1)</sup>, l<sup>(2)</sup> and l<sup>(3)</sup>?
 
-![w7.16](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.16.PNG?raw=true)
+![w7.16](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.16.png?raw=true)
 
-![w7.17](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.17.PNG?raw=true)
+![w7.17](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.17.png?raw=true)
 
 When we solve the following optimization problem, we get the features
 
-![w7.18](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.18.PNG?raw=true)
+![w7.18](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.18.png?raw=true)
 
 Notice that we do not regularize θ<sub>0</sub>, so it starts from θ<sub>1</sub>.
 
 Choose SVM parameters C(=1/λ)：
 
-![w7.19](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.19.PNG?raw=true)
+![w7.19](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.19.png?raw=true)
 
 ### III. SVMs in Practice
 
@@ -249,17 +249,17 @@ You need to specify the following:
 
 If you choose a Gaussian kernel:
 
-![w7.20](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.20.PNG?raw=true)
+![w7.20](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.20.png?raw=true)
 
 Note: do feature scaling before using Gaussian kernel.
 
 Other choices of kernel:
 
-![w7.21](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.21.PNG?raw=true)
+![w7.21](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.21.png?raw=true)
 
 Multi-class classification:
 
-![w7.22](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.22.PNG?raw=true)
+![w7.22](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.22.png?raw=true)
 
 **Logistic Regression vs SVMs**
 
