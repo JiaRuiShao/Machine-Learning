@@ -38,7 +38,7 @@ and exponential kernel as
 K(x,xi) = exp(-gamma * sum((x — xi²))
 ```
 
-Polynomial and exponential kernels calculates separation line in higher dimension. This is called kernel trick.
+Polynomial and exponential kernels calculates separation line in higher dimension. This is called __kernel trick__.
 
 ### I. Large Margin Classification
 
@@ -46,11 +46,11 @@ Polynomial and exponential kernels calculates separation line in higher dimensio
 
 Alternative view of logistic regression
 
-![w7.1]()
+![w7.1](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.1.PNG?raw=true)
 
 Support Vector Machine(SVM): an alternative to logistic regression
 
-![w7.2]()
+![w7.2](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.2.PNG?raw=true)
 
 - We replace the first and second terms of logistic regression with the respective cost functions
 
@@ -65,11 +65,11 @@ Support Vector Machine(SVM): an alternative to logistic regression
 		* if Xθ >= 1, h<sub>θ</sub>(x) = 1
 		* if Xθ < -1, h<sub>θ</sub>(x) = 0
 
-![w7.4]()
+![w7.4](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.4.PNG?raw=true)
 
 Q: Consider the following minimization problems:
 
-![w7.3]()
+![w7.3](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.3.PNG?raw=true)
 
 These two optimization problems will give the same value of θ (i.e., the same value of θ gives the optimal solution to both problems) if:
 
@@ -84,7 +84,7 @@ Sometimes people talk about support vector machines, as large margin classifiers
 
 Here's the cost function for the support vector machine:
 
-![w7.5]()
+![w7.5](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.5.PNG?raw=true)
 
 SVM Decision Boundary -- large margin classifier
 
@@ -96,7 +96,7 @@ To make A equals to 0, when y<sup>(i)</sup> = 1, z = Xθ >= 1; when y<sup>(i)</s
 
 Note: margin is the distance between blue and black line
 
-![w7.6]()
+![w7.6](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.6.PNG?raw=true)
 
 If C is very large
 
@@ -118,7 +118,7 @@ Q: Consider the training set to the right, where "x" denotes positive examples (
 
 **Vector inner product**
 
-![w7.7]()
+![w7.7](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.7.PNG?raw=true)
 
 - u<sup>T</sup> \* v is also called inner product
 
@@ -139,13 +139,13 @@ To simplify, we assume features n to be 2 and θ<sub>0</sub> to be 0.
 
 θ<sup>T</sup> \* x<sup>(i)</sup> = p<sup>(i)</sup> * ||θ|| = θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>2</sub>
 
-![w7.8]()
+![w7.8](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.8.PNG?raw=true)
 
 When θ0 = 0, this means the vector passes through the origin
 
 θ projection will always be 90 degrees to the decision boundary
 
-![w7.9]()
+![w7.9](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.9.PNG?raw=true)
 
 **Decision boundary choice 1: graph on the left**
 
@@ -173,7 +173,7 @@ p<sub>2</sub> is projection of x<sub>2</sub> example on θ (magenta)
 
 SVM would end up with a large margin because it tries to maximize the margin to minimize the squared norm of θ, ||θ||<sup>2</sup>.
 
-Q: ![w7.10]()
+Q: ![w7.10](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.10.PNG?raw=true)
 
 ![Q](http://spark-public.s3.amazonaws.com/ml/images/12.3-quiz-1-q.png)
 
@@ -185,13 +185,13 @@ A: 1/2
 
 1. **Non-linear decision boundary**
 
-![w7.11]()
+![w7.11](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.11.PNG?raw=true)
 
 Given the data, is there a different or better choice of the features f1, f2, f3 … fn?
 
 2. **Similarity function -- Gaussian kernel** 
 
-![w7.12]()
+![w7.12](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.12.PNG?raw=true)
 
 We will manually pick 3 landmarks (points) l<sup>(1)</sup>, l<sup>(2)</sup> and l<sup>(3)</sup>.
 
@@ -207,29 +207,29 @@ The different similarity functions are Gaussian Kernels and this kernel is often
 
 compute the kernel with similarity between X and a landmark
 
-![w7.13]()
+![w7.13](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.13.PNG?raw=true)
 
-![w7.14]()
+![w7.14](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.14.PNG?raw=true)
 
 As you increase sigma square, the value of the feature falls away much more slowly with moving away from l1.
 
-![w7.15]()
+![w7.15](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.15.PNG?raw=true)
 
 Where to get l<sup>(1)</sup>, l<sup>(2)</sup> and l<sup>(3)</sup>?
 
-![w7.16]()
+![w7.16](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.16.PNG?raw=true)
 
-![w7.17]()
+![w7.17](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.17.PNG?raw=true)
 
 When we solve the following optimization problem, we get the features
 
-![w7.18]()
+![w7.18](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.18.PNG?raw=true)
 
 Notice that we do not regularize θ<sub>0</sub>, so it starts from θ<sub>1</sub>.
 
 Choose SVM parameters C(=1/λ)：
 
-![w7.19]()
+![w7.19](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.19.PNG?raw=true)
 
 ### III. SVMs in Practice
 
@@ -249,17 +249,17 @@ You need to specify the following:
 
 If you choose a Gaussian kernel:
 
-![w7.20]()
+![w7.20](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.20.PNG?raw=true)
 
 Note: do feature scaling before using Gaussian kernel.
 
 Other choices of kernel:
 
-![w7.21]()
+![w7.21](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.21.PNG?raw=true)
 
 Multi-class classification:
 
-![w7.22]()
+![w7.22](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.22.PNG?raw=true)
 
 **Logistic Regression vs SVMs**
 
