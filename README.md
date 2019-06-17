@@ -73,11 +73,11 @@ We will also be covering machine learning system design. To optimize a machine l
 
 This week, you will be learning about the support vector machine (SVM) algorithm. SVMs are considered by many to be the most powerful 'black box' learning algorithm, and by posing a cleverly-chosen optimization objective, one of the most widely used learning algorithms today.
 
-[Note]()
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/7%20Support%20Vector%20Machines(SVM)%20Algorithm/README.md)
 
-[Slides]()
+[Support Vector Machine(SVM) and Kernel Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/7%20Support%20Vector%20Machines(SVM)%20Algorithm/Support%20Vector%20Machine(SVM)%20and%20Kernel%20Slides.pdf)
 
-[Exercise]()
+[SVMs Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/7%20Support%20Vector%20Machines(SVM)%20Algorithm/Support%20Vector%20Machines%20Exercise/Exercise)
 
 ### 8 Unsupervised Learning, Dimensionality Reduction
 
