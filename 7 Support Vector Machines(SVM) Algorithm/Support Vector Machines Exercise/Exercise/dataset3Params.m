@@ -23,11 +23,29 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+selection = [0.01 0.03 0.1 0.3 1 3 10 30]';
+lowest_prediction_error = 1;
+C_best = Inf; % could be set to any number, doesn't matter
+sigma_best = Inf; % could be set to any number, doesn't matter
 
+for i = 1:length(selection)
+	for j = 1:length(selection)
+		C = selection(i);
+		sigma = selection(j);
+		model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
+		predictions = svmPredict(model, Xval);
+		prediction_error = mean(double(predictions ~= yval));
 
+		if prediction_error < lowest_prediction_error
+			lowest_prediction_error = prediction_error;
+			C_best = selection(i);
+			sigma_best = selection(j);
+		end
+	end
+end
 
-
-
+C = C_best;
+sigma = sigma_best;
 
 % =========================================================================
 

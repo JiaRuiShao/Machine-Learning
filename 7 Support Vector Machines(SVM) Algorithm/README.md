@@ -270,6 +270,8 @@ compute the kernel with similarity between X and a landmark
 
 As you increase sigma square, the value of the feature falls away much more slowly with moving away from l1.
 
+Note: Conceptually similarity function is similar to a k-nearest neighbors graph, since it considers local neighborhood and almost disregards the relationship between two nodes far apart.
+
 ![w7.15](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.15.PNG?raw=true)
 
 Where to get l<sup>(1)</sup>, l<sup>(2)</sup> and l<sup>(3)</sup>?
@@ -287,6 +289,8 @@ Notice that we do not regularize θ<sub>0</sub>, so it starts from θ<sub>1</sub
 Choose SVM parameters C(=1/λ)：
 
 ![w7.19](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W7/w7.19.png?raw=true)
+
+**[use the cross validation set Xval, yval to determine the best C and σ parameter to use]**
 
 ### III. SVMs in Practice
 
@@ -354,3 +358,7 @@ The optimization problem of an SVM is a convex problem, so you will always find 
 Q: Suppose you are trying to decide among a few different choices of kernel and are also choosing parameters such as C, σ<sup>2</sup>, etc. How should you make the choice?
 
 A: Choose whatever performs best on the cross-validation data.
+
+### IV. Implementation Note
+
+- Most SVM software packages (including svmTrain.m) automatically add the extra feature x0 = 1 for you and automatically take care of learning the intercept term θ0. So when passing your training data to the SVM software, there is no need to add this extra feature x0 = 1 yourself.

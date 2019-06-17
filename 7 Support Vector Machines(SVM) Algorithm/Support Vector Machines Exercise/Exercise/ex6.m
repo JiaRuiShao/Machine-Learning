@@ -36,7 +36,7 @@ plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
+	
 %% ==================== Part 2: Training Linear SVM ====================
 %  The following code will train a linear SVM on the dataset and plot the
 %  decision boundary learned.
@@ -50,7 +50,7 @@ fprintf('\nTraining Linear SVM ...\n')
 
 % You should try to change the C value below and see how the decision
 % boundary varies (e.g., try C = 1000)
-C = 1;
+C = 100;
 model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
 visualizeBoundaryLinear(X, y, model);
 
@@ -139,7 +139,12 @@ pause;
 load('ex6data3.mat');
 
 % Try different SVM Parameters here
-[C, sigma] = dataset3Params(X, y, Xval, yval);
+[C, sigma] = dataset3Params(X, y, Xval, yval); % 1; 0.1
+% [C, sigma] = ParamCheck(X, y, Xval, yval); % 1; 0.1
+
+% Print the best C and sigma we selected based on the validation prediction error
+fprintf(['The best C and sigma are: ']);
+disp([C, sigma]);
 
 % Train the SVM
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
