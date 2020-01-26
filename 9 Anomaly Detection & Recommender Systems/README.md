@@ -324,8 +324,9 @@ Q4: Which of the following are true of collaborative filtering systems? Check al
 Q5: Suppose you have two matrices A and B, where A is 5x3 and B is 3x5. Their product is C=AB, a 5x5 matrix. Furthermore, you have a 5x5 matrix R where every entry is 0 or 1. 
 You want to find the sum of all elements C(i,j) for which the corresponding R(i,j) is 1, and ignore all elements C(i,j) where R(i,j)=0. 
 
-```
 One way to do so is the following code:
+
+```
 C = A * B;
 total = 0;
 for i = 1:5
