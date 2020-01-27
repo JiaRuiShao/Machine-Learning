@@ -18,8 +18,8 @@ Neural Networks
 
 The "one learning algorithm" hypothesis
 
-- Auditory cortex learns to see
-- Somatosensory cortex learns to see
++ Auditory cortex learns to see
++ Somatosensory cortex learns to see
 
 ### II. Neural Networks
 
