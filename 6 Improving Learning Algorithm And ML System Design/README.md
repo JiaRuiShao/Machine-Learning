@@ -44,9 +44,9 @@ hypothesis overfit:
 
 How to tell?
 
-- plot the hypothesis h of x 
++ plot the hypothesis h of x 
 
-- for problems with a large number of features, we need to use the following method
++ for problems with a large number of features, we need to use the following method
 
 Randomly split the data into two portion, training set and test set (usually 70% 30% split)
 
