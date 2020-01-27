@@ -211,7 +211,6 @@ So we use **random initialization** to prevent from symmetry breaking
 Initialize each θ<sub>i</sub><sub>j</sub><sup>(l)</sup> to a random value in [-ε, ε]
 
 Eg:
-
 ```matlab
 % If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.
 Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
@@ -245,7 +244,6 @@ Reasonable default: >= 1 hidden layer, same \# of hidden units in each hidden la
 Initialize each θ<sub>i</sub><sub>j</sub><sup>(l)</sup> to a random value in [-ε, ε]
 
 Eg:
-
 ```matlab
 % Randomly initialize the weights to small values 
 epsilon_init = 0.12; % a good choice is √6/(√(L_in+L_out)
