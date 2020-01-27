@@ -66,7 +66,7 @@ What does this mean?
 
 [ ] The algorithm is working, but kk is too large.
 
-[x] It is not possible for the cost function to sometimes increase. There must be a bug in the code.
+[X] It is not possible for the cost function to sometimes increase. There must be a bug in the code.
 
 ### **Random Initialization**
 
@@ -104,7 +104,7 @@ Suppose you run k-means using k = 3 and k = 5. You find that the cost function J
 
 [ ] The correct number of clusters is k = 3.
 
-[x] In the run with k = 5, k-means got stuck in a bad local minimum. You should try re-running k-means with multiple random initializations.
+[X] In the run with k = 5, k-means got stuck in a bad local minimum. You should try re-running k-means with multiple random initializations.
 
 [ ] In the run with k = 3, k-means got lucky. You should try re-running k-means with k = 3 and different random initializations until it performs no better than with k = 5.
 
@@ -183,11 +183,11 @@ Question:
 
 ![14](https://github.com/JiaRuiShao/Machine-Learning/blob/master/images/W8/14.png?raw=true)
 
-[x] U<sub>reduce</sup> will be an n×n matrix.
+[X] U<sub>reduce</sup> will be an n×n matrix.
 
-[x] x<sub>approx</sup> = x for every example x.
+[X] x<sub>approx</sup> = x for every example x.
 
-[x] The percentage of variance retained will be 100%.
+[X] The percentage of variance retained will be 100%.
 
 [ ] The percentage of variance retained will always above 1.
 
