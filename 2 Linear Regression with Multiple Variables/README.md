@@ -13,8 +13,8 @@ Size (feet)^2 | Number of bedrooms | Number of floors | Age of home (years) | Pr
 2104	|5	|1	|45	|460
 1416	|3	|2	|40	|232
 1534	|3	|2	|30	|315
-852	    |2	|1	|36	|178
-...	    |...	|...	|...	|...
+852	|2	|1	|36	|178
+...	|...	|...	|...	|...
 
 Answer:
 The size (in feet<sup>2</sup>) of the 4th home in the training set
