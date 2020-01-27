@@ -2,7 +2,7 @@
 
 Which points should influence optimality? 
 
-+ All points? 
+- All points? 
 	+ Linear regression 
 	+ Neural nets 
 
