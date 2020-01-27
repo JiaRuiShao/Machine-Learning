@@ -135,7 +135,7 @@ Other Optimization Algorithms(other than gradient descent):
 Pros | Cons
 -----|-----
 No need to manually pick alpha | More complex
-Often compute faster than gradient descent |
+Often compute faster than gradient descent |  
 
 We first need to provide a function that evaluates the following two functions for a given input value θ: J(θ); ∂J(θ)/∂θ<sub>j</sub>
 
