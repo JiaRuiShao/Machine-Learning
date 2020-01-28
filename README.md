@@ -85,11 +85,11 @@ This week, you will be learning about unsupervised learning. While supervised le
 
 We will also be introducing Principal Components Analysis, which is used to speed up learning algorithms, and is sometimes incredibly useful for visualizing and helping you to understand your data.
 
-[Note]()
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/8%20Unsupervised%20Learning/README.md)
 
-[Slides]()
+[K-means Clustering Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/8%20Unsupervised%20Learning/K-means%20Clustering.pdf)
 
-[Exercise]()
+[K-Means Clustering and PCA Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/8%20Unsupervised%20Learning/K-Means%20Clustering%20and%20PCA%20Exercise)
 
 ### 9 Anomaly Detection, Recommender Systems
 
@@ -97,28 +97,26 @@ This week, we will be covering anomaly detection which is widely used in fraud d
 
 We will also be covering recommender systems, which are used by companies like Amazon, Netflix and Apple to recommend products to their users. Recommender systems look at patterns of activities between different users and different products to produce these recommendations. In these lessons, we introduce recommender algorithms such as the collaborative filtering algorithm and low-rank matrix factorization.
 
-[Note]()
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/9%20Anomaly%20Detection%20%26%20Recommender%20Systems/README.md)
 
-[Slides]()
+[Recommender Systems -- Collaborative Filtering Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/9%20Anomaly%20Detection%20%26%20Recommender%20Systems/Recommender%20Systems%20--%20Collaborative%20Filtering%20Slides.pdf)
 
-[Exercise]()
+[Anomaly Detection Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/9%20Anomaly%20Detection%20%26%20Recommender%20Systems/Anomaly%20Detection%20Slides.pdf)
+
+[Anomaly Detection & Recommender Systems Exercise](https://github.com/JiaRuiShao/Machine-Learning/tree/master/9%20Anomaly%20Detection%20%26%20Recommender%20Systems/Anomaly%20Detection%20%26%20Recommender%20Systems%20Exercise)
 
 ### 10 Large Scale Machine Learning
 
 This week, we will be covering large scale machine learning. Machine learning works best when there is an abundance of data to leverage for training. With the amount data that many websites/companies are gathering today, knowing how to handle ‘big data’ is one of the most sought after skills in Silicon Valley.
 
-[Note]()
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/10%20Large%20Scale%20Machine%20Learning/README.md)
 
-[Slides]()
-
-[Exercise]()
+[Large Scale Machine Learning Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/10%20Large%20Scale%20Machine%20Learning/Large%20Scale%20Machine%20Learning%20Slides.pdf)
 
 ### 11 Application Example: Photo OCR
 
 This week, we will walk you through a complex, end-to-end application of machine learning, to the application of Photo OCR. Identifying and recognizing objects, words, and digits in an image is a challenging task. We discuss how a pipeline can be built to tackle this problem and how to analyze and improve the performance of such a system.
 
-[Note]()
+[Note](https://github.com/JiaRuiShao/Machine-Learning/blob/master/11%20Application%20Example%20--%20Photo%20OCR/README.md)
 
-[Slides]()
-
-[Exercise]()
+[Application Example -- Photo OCR Slides](https://github.com/JiaRuiShao/Machine-Learning/blob/master/11%20Application%20Example%20--%20Photo%20OCR/Application%20Example%20--%20Photo%20OCR%20Slides.pdf)
